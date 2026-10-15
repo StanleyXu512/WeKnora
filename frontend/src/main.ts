@@ -13,6 +13,7 @@ import "@/components/css/chat-hljs-dark.less";
 // RecycleScroller/DynamicScroller to size their viewport correctly.
 // Without it the scroller computes 0 height and renders no items.
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
+import "@/assets/chint/theme.css";
 import i18n from "./i18n";
 import { initTheme } from "@/composables/useTheme";
 import { initFont } from "@/composables/useFont";

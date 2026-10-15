@@ -1,0 +1,22 @@
+/* Sidebar colour variant: deep brand blue.
+   Selected by <html data-shell-sidebar="dark">; orthogonal to data-ui-theme.
+   Pair with either topnav theme — most common with light-neutral (light topnav + deep blue rail).
+  Active state uses the brand primary fill (--color-primary) with --color-aux-blue indicator:
+   white text on primary 6.3:1 ✓ AA; indicator on deep base 8.0:1, on primary fill 3.0:1 — legible against the rail.
+   Only --shell-sidebar-* semantic variables belong here — never structural rules. */
+[data-shell-sidebar="dark"] {
+  --shell-sidebar-background: var(--color-primary-deep);
+  --shell-sidebar-border: 0;
+  --shell-sidebar-text: var(--color-on-primary-text-muted);
+  --shell-sidebar-text-strong: var(--text-on-primary);
+  --shell-sidebar-icon: var(--color-on-primary-icon-muted);
+  --shell-sidebar-hover-background: var(--color-on-primary-hover-bg-soft);
+  --shell-sidebar-active-background: var(--color-primary);
+  --shell-sidebar-active-hover-background: var(--color-primary-hover);
+  --shell-sidebar-active-text: var(--text-on-primary);
+  --shell-sidebar-active-icon: var(--text-on-primary);
+  --shell-sidebar-active-indicator: var(--color-aux-blue);
+  --shell-sidebar-divider: var(--color-on-primary-divider);
+  --shell-sidebar-scrollbar-thumb: var(--color-on-primary-scrollbar);
+  --shell-sidebar-close-text: var(--color-on-primary-text-muted);
+}

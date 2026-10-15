@@ -1,0 +1,28 @@
+/* Optional product theme: neutral navigation for content-dense products. */
+[data-ui-theme="light-neutral"] {
+  --shell-topnav-background: var(--color-bg-container);
+  --shell-topnav-border: 1px solid var(--color-divider);
+  --shell-topnav-shadow: none;
+  --shell-topnav-text: var(--text-title);
+  --shell-topnav-muted-text: var(--text-secondary);
+  --shell-topnav-toggle-text: var(--text-secondary);
+  --shell-topnav-hover-background: var(--color-bg-page);
+  --shell-topnav-active-background: transparent;
+  --shell-topnav-active-indicator: var(--color-primary);
+  --shell-topnav-avatar-border: var(--color-border);
+  --shell-topnav-control-background: var(--color-bg-container);
+  --shell-topnav-control-border: var(--color-border);
+  --shell-topnav-control-text: var(--text-body);
+  --shell-topnav-control-placeholder: var(--text-placeholder);
+  --shell-topnav-control-focus-border: var(--color-primary);
+  --shell-topnav-control-focus-shadow: var(--shadow-focus);
+}
+
+html[data-ui-theme="light-neutral"][data-theme="light"]:not([data-shell-sidebar="dark"]) {
+  --shell-page-background: linear-gradient(
+    90deg,
+    var(--color-bg-gradient-page-start) 0%,
+    var(--color-bg-gradient-page-center) 50%,
+    var(--color-bg-gradient-page-end) 100%
+  );
+}

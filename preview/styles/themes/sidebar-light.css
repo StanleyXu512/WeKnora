@@ -1,0 +1,20 @@
+/* Sidebar colour variant: light (default).
+   Selected by <html data-shell-sidebar="light">; orthogonal to data-ui-theme.
+  Active and inactive menu hover states use the shared interactive hover token.
+   Only --shell-sidebar-* semantic variables belong here — never structural rules. */
+[data-shell-sidebar="light"] {
+  --shell-sidebar-background: var(--color-bg-container);
+  --shell-sidebar-border: 1px solid var(--color-divider);
+  --shell-sidebar-text: var(--text-secondary);
+  --shell-sidebar-text-strong: var(--text-title);
+  --shell-sidebar-icon: var(--text-caption);
+  --shell-sidebar-hover-background: var(--color-interactive-hover-bg);
+  --shell-sidebar-active-background: var(--color-primary-bg);
+  --shell-sidebar-active-hover-background: var(--color-interactive-hover-bg);
+  --shell-sidebar-active-text: var(--color-primary);
+  --shell-sidebar-active-icon: var(--color-primary);
+  --shell-sidebar-active-indicator: var(--color-primary);
+  --shell-sidebar-divider: var(--color-divider);
+  --shell-sidebar-scrollbar-thumb: var(--color-border);
+  --shell-sidebar-close-text: var(--text-secondary);
+}

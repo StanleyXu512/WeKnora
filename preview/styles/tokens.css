@@ -1,0 +1,233 @@
+/* Backend UI Design System v2.1 - executable Token source of truth */
+:root {
+  /* ===== 主色 ===== */
+  --color-primary: #1E50E6;          /* 品牌主色 */
+  --color-primary-hover: #4B73EB;   /* 悬浮 */
+  --color-primary-active: #173FB3;  /* 点击、强强调 */
+  --color-primary-disabled: #8FA7F3; /* 禁用、弱化 */
+  --color-primary-bg: #F1F4FD;       /* 容器内选中背景 */
+  --color-primary-deep: #08194C;     /* 品牌深蓝 */
+  --color-primary-text: var(--color-primary);
+  --color-primary-text-hover: var(--color-primary-active);
+  --color-primary-text-active: var(--color-primary-deep);
+  --color-welcome-banner-image-scrim: rgba(8, 25, 76, 0.78); /* 图片横幅文字可读性遮罩 */
+  --color-secondary-hover-border: #C2D0F8; /* 次要按钮悬浮边框 */
+  --color-neutral-hover-border: #D4D7DE;   /* 中性按钮悬浮边框 */
+
+  /* ===== 辅助色 ===== */
+  --color-aux-blue: #50BCFF;
+  --color-aux-green: #9DED00;
+  --color-aux-red: #FF0A50;
+  --color-aux-purple: #F6F0FF;
+
+  /* ===== 功能色 ===== */
+  --color-success: #13BB2F;          /* 成功状态 */
+  --color-success-bg: #E7FAEA;       /* 成功状态标签浅背景 */
+  --color-trend-down-text: #e32222;  /* 趋势下跌小号文字 */
+  --color-warning: #FF9322;          /* 警告图标、圆点、边框 */
+  --color-warning-bg: #FFF0E1;       /* 警告状态标签浅背景 */
+  --color-error: #F32222;            /* 错误反馈、危险状态 */
+  --color-error-bg: #FEECEC;         /* 错误状态标签浅背景 */
+  --color-error-hover: #F95D5D;      /* 危险操作悬浮 */
+  --color-error-active: #D22222;     /* 危险操作点击、强强调 */
+  --color-info: #999999;             /* 中性信息 */
+  --color-info-text: #888888;        /* 信息辅助文字 */
+  --color-info-bg: #F2F3F5;          /* 信息状态标签浅背景 */
+  --color-success-text: #0C7E20;     /* 成功状态小号文字 */
+  --color-success-text-hover: #0A721C; /* 成功文字悬浮 */
+  --color-success-text-active: #086217; /* 成功文字点击 */
+  --color-warning-text: #A65B10;     /* 警告状态小号文字 */
+  --color-warning-text-hover: #914F0D; /* 警告文字悬浮 */
+  --color-warning-text-active: #7C4209; /* 警告文字点击 */
+  --color-success-solid: #13BB2F;    /* 仅装饰性成功高亮 */
+  --color-warning-solid: #FF9322;    /* 仅装饰性警告高亮 */
+  --color-error-solid: #F32222;      /* 仅装饰性错误高亮 */
+  --color-info-solid: #999999;       /* 仅装饰性信息高亮 */
+
+  /* ===== 中性色 ===== */
+  --color-border: #dcdfe6;            /* 控件边框 */
+  --color-divider: #E5E6EB;           /* 表格、导航、模块分界线 */
+  --color-bg-page: #F2F3F9;           /* 页面背景、模块底色 */
+  --color-bg-container: #FFFFFF;      /* 卡片、弹窗、内容区块 */
+  --color-bg-filter-inset: #F1F4FD;   /* 卡片内嵌筛选栏 */
+  --color-interactive-hover-bg: #F8F9FE; /* 表格、下拉和浅色侧边栏悬浮背景 */
+  --color-table-header-bg: #F8F9FA;   /* 表格表头 */
+  --color-bg-canvas: #F2F3F8;         /* 页面最外层画布 */
+  --color-bg-gradient-page-start: #E0E8FB;
+  --color-bg-gradient-page-center: #F1F4FD;
+  --color-bg-gradient-page-end: #E0E8FB;
+  --color-foot-bg: rgba(255, 255, 255, 0.8); /* 底部悬浮操作栏 */
+  --color-mask: rgba(0, 0, 0, 0.5);          /* 弹窗遮罩 */
+  --color-tooltip-bg: rgba(29, 33, 41, 0.85); /* Tooltip 深色底 */
+
+  /* ===== 主色填充反色态（主题不变的侧栏值在根块定义） ===== */
+  --color-on-primary-text-muted: rgba(255, 255, 255, 0.72);
+  --color-on-primary-icon-muted: rgba(255, 255, 255, 0.62);
+  --color-on-primary-hover-bg-soft: rgba(255, 255, 255, 0.08);
+  --color-on-primary-divider: rgba(255, 255, 255, 0.12);
+  --color-on-primary-scrollbar: rgba(255, 255, 255, 0.24);
+  --color-on-primary-hover-bg: rgba(255, 255, 255, 0.12);
+  --color-on-primary-active-bg: rgba(0, 0, 0, 0.16);
+  --color-on-primary-muted: rgba(255, 255, 255, 0.9);
+  --color-on-primary-border: rgba(255, 255, 255, 0.3);
+
+  /* ===== 文本色阶 ===== */
+  --text-title: #1D2129;       /* 标题、核心文字 */
+  --text-body: #4B4F59;        /* 正文、内容描述 */
+  --text-secondary: #666972;   /* 备注、说明 */
+  --text-caption: #808080;     /* 时间、标签说明 */
+  --text-placeholder: #A8A8A8; /* 占位，仅限占位语义 */
+  --text-disabled: #CCCCCC;    /* 禁用，仅限禁用语义 */
+  --text-on-primary: #FFFFFF;  /* 主色或危险色底上的文字 */
+
+  /* ===== 字体 ===== */
+  --font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --font-h1: 700 24px/32px var(--font-family);
+  --font-h2: 700 20px/28px var(--font-family);
+  --font-h3: 700 16px/24px var(--font-family);
+  --font-body: 400 14px/22px var(--font-family);
+  --font-body-strong: 600 14px/22px var(--font-family);
+  --font-caption: 400 12px/18px var(--font-family);
+  --font-caption-strong: 600 12px/18px var(--font-family);
+  --font-metric: 700 28px/34px var(--font-family);
+
+  /* ===== 间距 ===== */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+
+  /* ===== 圆角 ===== */
+  --radius-sm: 4px;       /* 紧凑控件 */
+  --radius-base: 8px;     /* 卡片、按钮、输入框 */
+  --radius-lg: 16px;      /* 大型容器 */
+  --radius-round: 999px;  /* 胶囊、进度条、头像、圆点 */
+
+  /* ===== 阴影 ===== */
+  --shadow-light: 0 2px 6px 0 rgba(5, 21, 87, 0.05);
+  --shadow-medium: 0 4px 16px 0 rgba(5, 21, 87, 0.12);
+  --shadow-heavy: 0 8px 24px 0 rgba(5, 21, 87, 0.16);
+  --shadow-focus: 0 0 0 3px rgba(5, 21, 87, 0.05);
+  --shadow-table-fixed: -4px 0 8px -4px rgba(5, 21, 87, 0.12);
+
+  /* ===== 尺寸 ===== */
+    --size-nav-web: 56px;
+    --size-nav-mobile: 48px;
+    --size-tabbar: 40px;
+    --size-tabbar-mobile: 44px;
+  --size-sidebar-expand: 208px;
+  --size-sidebar-collapse: 64px;
+  --size-btn-lg: 40px;
+  --size-btn-md: 32px;
+  --size-datepicker-cell: 32px;
+  --size-datepicker-panel: 322px;
+  --size-datepicker-panel-with-shortcuts: 438px;
+  --size-datepicker-shortcuts: 110px;
+  --size-btn-sm: 24px;
+  --size-input: 32px;
+  --size-counter-mobile: 44px;
+  --size-table-head: 40px;
+  --size-table-row: 48px;
+  --size-table-row-compact: 40px;
+  --size-table-actions-max-width: 200px;
+  --size-chart-height: 260px;
+  --size-chart-height-mobile: 220px;
+  --size-chart-line-width: 2px;
+  --size-welcome-banner-height: 128px;
+  --size-welcome-banner-decoration: 220px;
+  --size-pagination-item: 32px; /* 分页项尺寸 */
+  --size-pagination-size: 88px;
+  --size-pagination-jump: 56px;
+  /* Remix 固定字号：导航与表格共用默认尺寸 */
+  --size-remix-icon: 16px;
+  --size-remix-icon-card: 20px;
+  --size-remix-icon-empty: 48px;
+  /* 旧 SVG 与基础组件尺寸兼容 */
+  --size-icon-sm: 12px;
+  --size-icon-md: 14px;
+  --size-icon-lg: 16px;
+  /* 壳层兼容尺寸，同时用于 Logo、头像和导航缩进 */
+  --size-icon-nav: 20px;
+  --size-icon-sidebar: 16px;
+  --size-icon-chevron: 16px;
+  --size-icon-metric: 24px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ===== 主色 ===== */
+  --color-primary: #4569E8;          /* 暗色模式品牌主色 */
+  --color-primary-hover: #5B82EE;   /* 暗色模式悬浮 */
+  --color-primary-active: #3355CC;  /* 暗色模式点击、强强调 */
+  --color-primary-disabled: #2A3F6F; /* 暗色模式禁用、弱化 */
+  --color-primary-bg: #1A2A4A;       /* 暗色容器内悬浮、选中背景 */
+  --color-primary-deep: #0B2267;     /* 暗色模式品牌深蓝：同 hue 225° 提亮一档，与暗底 #131720 拉开层级 */
+  --color-primary-text: #7A9BFF;
+  --color-primary-text-hover: #9DB6FF;
+  --color-primary-text-active: #6E92F7;
+  --color-secondary-hover-border: #4569E8; /* 暗色次要按钮悬浮边框 */
+  --color-neutral-hover-border: #5A606B;   /* 暗色中性按钮悬浮边框 */
+
+  /* ===== 辅助色 ===== */
+  --color-aux-blue: #6BCBFF;
+  --color-aux-green: #B5F23A;
+  --color-aux-red: #FF4080;
+  --color-aux-purple: #2A2440;
+
+  /* ===== 功能色 ===== */
+  --color-success: #3DD968;          /* 暗色成功状态 */
+  --color-success-bg: #0D2F18;       /* 暗色成功状态标签背景 */
+  --color-trend-down-text: #FF8585;  /* 暗色趋势下跌小号文字 */
+  --color-warning: #FFB155;          /* 暗色警告状态 */
+  --color-warning-bg: #3D2410;       /* 暗色警告状态标签背景 */
+  --color-error: #FF6B6B;            /* 暗色错误反馈 */
+  --color-error-bg: #3D1414;         /* 暗色错误状态标签背景 */
+  --color-error-hover: #FF8585;      /* 暗色危险操作悬浮 */
+  --color-error-active: #E54545;     /* 暗色危险操作点击 */
+  --color-info: #B0B3BB;             /* 暗色中性信息 */
+  --color-info-text: #A8B4C5;        /* 暗色信息辅助文字 */
+  --color-info-bg: #2A2D35;          /* 暗色信息状态标签背景 */
+  --color-success-text: #5BE078;     /* 暗色成功小号文字 */
+  --color-success-text-hover: #7BEC92; /* 暗色成功文字悬浮 */
+  --color-success-text-active: #40B85F; /* 暗色成功文字点击 */
+  --color-warning-text: #FFC777;     /* 暗色警告小号文字 */
+  --color-warning-text-hover: #FFD991; /* 暗色警告文字悬浮 */
+  --color-warning-text-active: #D99C42; /* 暗色警告文字点击 */
+  /* ===== 中性色 ===== */
+  --color-border: #3A3F4B;            /* 暗色控件、容器边框 */
+  --color-divider: #3A3F4B;           /* 暗色表格、导航、模块分界线 */
+  --color-bg-page: #131720;           /* 暗色页面背景 */
+  --color-bg-container: #1D2129;      /* 暗色卡片、弹窗、内容区块 */
+  --color-bg-filter-inset: #171C26;   /* 暗色卡片内嵌筛选栏 */
+  --color-interactive-hover-bg: #2A2D35; /* 暗色容器内悬浮 */
+  --color-table-header-bg: #252932;   /* 暗色表格表头 */
+  --color-bg-canvas: #0F1218;         /* 暗色页面最外层画布 */
+  --color-bg-elevated: #252932;       /* 暗色浮层、下拉面板、Tooltip */
+  --color-foot-bg: rgba(29, 33, 41, 0.8); /* 暗色底部悬浮操作栏 */
+  --color-mask: rgba(0, 0, 0, 0.7);   /* 暗色弹窗遮罩 */
+  --color-tooltip-bg: rgba(29, 33, 41, 0.96); /* 暗色 Tooltip 深色底 */
+
+  /* ===== 主色填充顶栏反色态（仅覆盖暗色差异） ===== */
+  --color-on-primary-hover-bg: rgba(255, 255, 255, 0.12);
+  --color-on-primary-active-bg: rgba(0, 0, 0, 0.16);
+  --color-on-primary-muted: rgba(255, 255, 255, 0.9);
+  --color-on-primary-border: rgba(255, 255, 255, 0.3);
+
+  /* ===== 文本色阶 ===== */
+  --text-title: #F0F1F3;       /* 暗色标题、核心文字 */
+  --text-body: #C9CDD4;        /* 暗色正文、内容描述 */
+  --text-secondary: #A8ABB3;   /* 暗色备注、说明 */
+  --text-caption: #8B8E96;     /* 暗色时间、标签说明 */
+  --text-placeholder: #5E6168; /* 暗色占位，仅限占位语义 */
+  --text-disabled: #4A4D54;    /* 暗色禁用，仅限禁用语义 */
+  --text-on-primary: #FFFFFF;  /* 暗色主色底上的文字 */
+
+  /* ===== 阴影 ===== */
+  --shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+  --shadow-heavy: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 3px rgba(91, 130, 238, 0.4);
+  --shadow-table-fixed: -4px 0 8px -4px rgba(0, 0, 0, 0.4);
+}

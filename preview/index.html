@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-icon-library="remixicon" data-ui-theme="brand-primary" data-shell-sidebar="light" data-topnav-navigation="tabs" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHINT · 知识库风格预览</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" data-remixicon="4.5.0" href="vendor/remixicon/4.5.0/remixicon-local.css">
+<link rel="stylesheet" href="page.css"></head>
+<body>
+
+  <div class="app" data-app-shell>
+    <!-- 默认品牌主题：brand-primary + .topnav--primary + 反白 Logo。切换主题时按 references/themes.md 替换这三项；选择 data-shell-sidebar="none" 时移除侧栏开关、侧栏和遮罩结构。仅用户明确要求顶栏面包屑时，才将 data-topnav-navigation 设为 breadcrumb 并用下方注释结构替换 .topnav__tabs。 -->
+    <header class="topnav topnav--primary" aria-label="顶部导航">
+      <a class="topnav__brand" href="#main-content">
+        <img class="brand-logo" src="images/logo-EN-white.svg" alt="CHNT">
+        <span>集团知识中心</span>
+      </a>
+      <button class="sidebar__toggle" type="button" aria-label="收起导航菜单" aria-controls="sidebar" aria-expanded="true">
+        <i class="icon ri-menu-line" aria-hidden="true"></i>
+      </button>
+      <nav class="topnav__tabs" aria-label="顶部导航菜单"><a class="topnav__tab is-active" href="index.html" aria-current="page">知识中心</a></nav><span class="topnav__spacer"></span>
+      <div class="topnav__actions">
+        <button class="topnav__action theme-toggle" id="theme-toggle" type="button" aria-label="切换至深色模式" title="切换至深色模式">
+          <i class="icon icon--sun ri-sun-line" aria-hidden="true"></i>
+          <i class="icon icon--moon ri-moon-line" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="topnav__user">
+        <img src="images/avatar.svg" alt="">
+        <span>风格预览 · 示例数据</span>
+      </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="sidebar__drawer-header">
+        <span class="sidebar__drawer-title">集团知识中心</span>
+        <button class="sidebar__close" type="button" aria-label="关闭导航菜单">
+          <i class="icon ri-close-line" aria-hidden="true"></i>
+        </button>
+      </div>
+<a class="sidebar__item is-active" href="index.html" aria-current=page><i class="icon icon-nav ri-book-2-line" aria-hidden="true"></i><span>知识库</span></a><a class="sidebar__item " href="http://localhost:8081/platform/knowledge-bases" ><i class="icon icon-nav ri-chat-3-line" aria-hidden="true"></i><span>原平台知识库</span></a><a class="sidebar__item " href="http://127.0.0.1:5174/chint-dev.html" ><i class="icon icon-nav ri-team-line" aria-hidden="true"></i><span>组织与人员</span></a><div class="preview-note">CHINT 视觉评审<br>本页操作仅影响当前预览。<br>组织与人员链接打开开发工作台。</div>    </nav>
+    <button class="sidebar-overlay" type="button" tabindex="-1" aria-label="关闭导航菜单"></button>
+
+    <!-- 复制页面后，将实际使用的 L1/L2 根组件类名填入 data-component-reuse。 -->
+<main class="content" id="main-content" data-component-reuse="btn,card,field,form-grid,icon,input,pagination,table,table-wrap,tag">
+<h1 class="visually-hidden">知识库管理风格预览</h1><div class="content__inner module-stack"><div class="grid"><div class="preview-full module-stack">
+<section class="card"><div class="card__header"><div class="card__heading"><h2 class="card__title">知识库</h2></div><button id="create" class="btn btn--primary" type="button"><i class="icon ri-add-line" aria-hidden="true"></i>新建知识库</button></div>
+<div class="card__body"><form id="search-form" class="preview-toolbar"><div class="field"><label for="search">知识库名称 / 所属组织</label><input id="search" class="input" type="search" placeholder="输入关键词"></div><button class="btn btn--neutral" type="reset">重置</button><button class="btn btn--primary" type="submit"><i class="icon ri-search-line" aria-hidden="true"></i>查询</button></form></div></section>
+<section id="create-panel" class="card" hidden><div class="card__header"><div class="card__heading"><h2 class="card__title">新建知识库</h2></div></div><div class="card__body"><form id="create-form"><div class="form-grid"><div class="field"><label for="kb-name">知识库名称（必填）</label><input class="input" id="kb-name" required maxlength="60"></div><div class="field"><label for="kb-org">所属组织（必填）</label><input class="input" id="kb-org" required maxlength="60"></div></div><div class="form-actions"><button class="btn btn--neutral" id="cancel" type="button">取消</button><button class="btn btn--primary" type="submit">创建预览记录</button></div></form></div></section>
+<section class="card"><div class="card__header"><div class="card__heading"><h2 class="card__title">知识库列表</h2></div><span id="result-count" aria-live="polite"></span></div><div class="card__body"><div class="table-wrap table-wrap--page-10"><table class="table"><thead><tr><th scope="col">知识库名称</th><th scope="col">所属组织</th><th scope="col">类型</th><th scope="col">文档数</th><th scope="col">状态</th><th scope="col">更新时间</th><th scope="col" class="is-actions">操作</th></tr></thead><tbody id="rows"><tr><td>集团制度与管理办法</td><td>集团总部</td><td>文档型</td><td>128</td><td><span class="tag tag--success">已就绪</span></td><td>2026-10-15</td><td class="is-actions">预览加载中</td></tr></tbody></table><p id="empty" hidden>未找到匹配的知识库，请调整关键词或重置查询。</p></div><div class="pagination"><span class="pagination__total" id="total"></span><button class="btn btn--neutral" id="prev" type="button">上一页</button><span id="page"></span><button class="btn btn--neutral" id="next" type="button">下一页</button></div></div></section>
+<section class="card" id="detail" hidden><div class="card__header"><div class="card__heading"><h2 class="card__title" id="detail-title">知识库详情</h2></div><button class="btn btn--neutral" id="close-detail" type="button">关闭</button></div><div class="card__body"><p id="detail-text"></p><p>这是视觉与交互预览，未读取或修改真实知识库。</p></div></section>
+<p class="preview-note" role="status" id="notice">示例数据用于评审配色、间距和组件状态；刷新页面后恢复。</p></div></div></div></main>
+  </div>
+  <script src="scripts/app-shell.js"></script>
+<script src="page.js"></script><!-- Vue 接入时沿用本地 Remix Icon 4.5.0；本预览未接入业务 API。 --><!-- REMIXICON_MIGRATION
+See the shared CHINT Backend UI icon guide. Icon names are checked from HTML and local scripts; third-party policy uses data-third-party-icons on the HTML root (default: unknown).
+-->
+</body>
+</html>

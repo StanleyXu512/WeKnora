@@ -13,7 +13,8 @@
     "test": "tsx --test",
     "check-i18n": "tsx --test src/i18n/localeKeyAudit.test.ts",
     "scan-i18n-gaps": "tsx src/i18n/localeGapScan.ts",
-    "regenerate-i18n-locales": "tsx src/i18n/regeneratePrunedLocales.ts"
+    "regenerate-i18n-locales": "tsx src/i18n/regeneratePrunedLocales.ts",
+    "dev:chint": "vite --config vite.chint.config.ts"
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",

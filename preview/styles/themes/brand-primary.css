@@ -1,0 +1,19 @@
+/* Default product theme: primary-filled navigation. */
+[data-ui-theme="brand-primary"] {
+  --shell-topnav-background: var(--color-primary);
+  --shell-topnav-border: 0;
+  --shell-topnav-shadow: var(--shadow-medium);
+  --shell-topnav-text: var(--text-on-primary);
+  --shell-topnav-muted-text: var(--color-on-primary-muted);
+  --shell-topnav-toggle-text: var(--text-on-primary);
+  --shell-topnav-hover-background: var(--color-on-primary-hover-bg);
+  --shell-topnav-active-background: var(--color-on-primary-active-bg);
+  --shell-topnav-active-indicator: transparent;
+  --shell-topnav-avatar-border: var(--color-on-primary-border);
+  --shell-topnav-control-background: var(--color-on-primary-hover-bg);
+  --shell-topnav-control-border: var(--color-on-primary-border);
+  --shell-topnav-control-text: var(--text-on-primary);
+  --shell-topnav-control-placeholder: var(--color-on-primary-muted);
+  --shell-topnav-control-focus-border: var(--text-on-primary);
+  --shell-topnav-control-focus-shadow: 0 0 0 3px var(--color-on-primary-border);
+}

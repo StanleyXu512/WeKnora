@@ -1,0 +1,24 @@
+{
+  "source_id": "demo-masterdata",
+  "batch_id": "demo-20261011-001",
+  "sequence": 1,
+  "mode": "full",
+  "complete": true,
+  "organizations": [
+    {"id": "demo-a", "name": "示例组织 A", "parent_id": "", "status": "active"},
+    {"id": "demo-b", "name": "示例组织 B", "parent_id": "", "status": "active"}
+  ],
+  "people": [
+    {
+      "id": "demo-person-a",
+      "name": "示例人员 A",
+      "org_id": "demo-a",
+      "status": "active",
+      "feishu_identities": [
+        {"tenant_id": "demo-feishu-1", "user_id": "demo-user-1"},
+        {"tenant_id": "demo-feishu-2", "user_id": "demo-user-2"},
+        {"tenant_id": "demo-feishu-3", "user_id": "demo-user-3"}
+      ]
+    }
+  ]
+}

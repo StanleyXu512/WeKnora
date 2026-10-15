@@ -86,9 +86,7 @@
                         :class="['menu_item', item.childrenPath && item.childrenPath == currentpath ? 'menu_item_c_active' : isMenuItemActive(item.path) ? 'menu_item_active' : '']">
                         <div class="menu_item-box">
                             <div class="menu_icon">
-                                <img class="icon"
-                                    :src="getImgSrc(item.icon == 'zhishiku' ? knowledgeIcon : item.icon == 'agent' ? agentIcon : item.icon == 'artifact' ? artifactIcon : item.icon == 'toolbox' ? toolboxIcon : item.icon == 'organization' ? organizationIcon : item.icon == 'logout' ? logoutIcon : item.icon == 'setting' ? settingIcon : prefixIcon)"
-                                    alt="">
+                                <i class="chint-menu-icon" :class="item.icon === 'zhishiku' ? 'ri-book-2-line' : item.icon === 'agent' ? 'ri-robot-line' : item.icon === 'artifact' ? 'ri-file-list-3-line' : item.icon === 'toolbox' ? 'ri-tools-line' : item.icon === 'organization' ? 'ri-team-line' : item.icon === 'logout' ? 'ri-logout-box-line' : item.icon === 'setting' ? 'ri-settings-3-line' : 'ri-chat-3-line'" aria-hidden="true"></i>
                             </div>
                             <template v-if="!uiStore.sidebarCollapsed">
                                 <span class="menu_title" :title="item.title">{{ item.title }}</span>

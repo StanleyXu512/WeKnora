@@ -1,0 +1,6 @@
+.preview-full { grid-column: 1 / -1; min-width: 0; }
+.preview-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-xs); }
+.preview-toolbar .field { flex: 1; min-width: var(--size-pagination-size); }
+.preview-note { color: var(--text-secondary); font: var(--font-caption); padding: var(--space-sm); }
+.preview-number { text-align: right; font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
